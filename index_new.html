@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>График работы отдела</title>
+  <style>
+    :root {
+      --green: #6aa84f;
+      --red: #e06666;
+      --header: #f3f4f6;
+      --border: #d9dee7;
+      --text: #1f2937;
+      --bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      font-family: Arial, sans-serif;
+      background: #f6f7f9;
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .dot.work-dot { background: var(--green); }
+    .dot.rest-dot { background: var(--red); }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 720px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    th {
+      background: var(--header);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+
+    .name {
+      text-align: left;
+      font-weight: 600;
+      min-width: 280px;
+      background: #ffffff;
+    }
+
+    .work {
+      background: var(--green);
+      color: transparent;
+    }
+
+    .rest {
+      background: var(--red);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 12px;
+      }
+
+      .page {
+        padding: 18px;
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>График работы отдела</h1>
+    <p class="subtitle">Зелёный цвет — сотрудник работает, красный — выходной день.</p>
+
+    <div class="legend">
+      <div class="legend-item"><span class="dot work-dot"></span> Работает</div>
+      <div class="legend-item"><span class="dot rest-dot"></span> Отдых</div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Имя</th>
+            <th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class='name'>Кириченко Николай Александрович</td><td class="rest">Отдых</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td></tr><tr><td class='name'>Гаврилова Екатерина Алексеевна</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td></tr><tr><td class='name'>Мамонов Егор Павлович</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td></tr><tr><td class='name'>Моисеев Иван Олегович</td><td class="rest">Отдых</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td></tr><tr><td class='name'>Сафин Марк Алексеевич</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td><td class="rest">Отдых</td></tr><tr><td class='name'>Урсу Роман Эдуардович</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td><td class="rest">Отдых</td></tr><tr><td class='name'>Фомина Валерия Дмитриевна</td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td><td class="work"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
